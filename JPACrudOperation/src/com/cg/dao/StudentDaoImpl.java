@@ -32,4 +32,14 @@ public class StudentDaoImpl implements StudentDao {
 	public void removeStudent(Student student) {
 		entityManager.remove(student);
 	}
+
+	@Override
+	public void BeginTransaction() {
+		entityManager.getTransaction().begin();
+	}
+
+	@Override
+	public void CommitTransaction() {
+		entityManager.getTransaction().commit();
+	}
 }
