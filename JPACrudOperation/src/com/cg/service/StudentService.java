@@ -8,7 +8,5 @@ public interface StudentService {
 	public abstract Student getStudentById(int id); //Retrieve
 	public abstract void updateStudent(Student student); //Update
 	public abstract void removeStudent(Student student); //Delete
-	
-	public abstract Student findStudentById(int id);
 
 }
