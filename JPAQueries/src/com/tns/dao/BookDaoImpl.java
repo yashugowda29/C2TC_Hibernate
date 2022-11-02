@@ -27,7 +27,7 @@ public class BookDaoImpl implements BookDao {
 	public List<Book> getBookByTitle(String title) {
 		
 		String qStr = "SELECT book FROM Book book WHERE book.title LIKE : ptitle";		
-		TypedQuery<Book> query = entityManager.createNamedQuery(qStr, Book.class);		
+		TypedQuery<Book> query = entityManager.createQuery(qStr, Book.class);		
 		query.setParameter("ptitle", "%"+title+"%");		
 		return query.getResultList();
 	}
@@ -61,7 +61,7 @@ public class BookDaoImpl implements BookDao {
 	@Override
 	public List<Book> getBooksInPriceRange(double low, double high) {
 		String qStr = "SELECT book FROM Book book WHERE book.price between :low and :high";
-		TypedQuery<Book> query = entityManager.createNamedQuery(qStr, Book.class);
+		TypedQuery<Book> query = entityManager.createQuery(qStr, Book.class);
 		query.setParameter("low", low);
 		query.setParameter("high", high);
 		List<Book> bookList = query.getResultList();
