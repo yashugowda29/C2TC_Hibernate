@@ -48,5 +48,12 @@ public class Book implements Serializable {
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}	
+	}
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", price=" + price + ", getId()="
+				+ getId() + ", getTitle()=" + getTitle() + ", getAuthor()=" + getAuthor() + ", getPrice()=" + getPrice()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
 }
